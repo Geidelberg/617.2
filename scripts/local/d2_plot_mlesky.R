@@ -146,13 +146,3 @@ plot_mlesky(ofn ="./617.2/results/Sample_England_B.1.617.2_n_tree_dating_5_dated
             Lineage_matched = "B.1.1.7",
             dedup = "", meanrate = "sampled" )
 
-
-
-tds = readRDS("./617.2/results/Sample_England_B.1.617.2_n_tree_dating_10_dated_trees.rds")
-tds[[1]][[1]]$tip.label
-test=unlist(lapply(tds, function(x) x[[1]]$tip.label))
-
-tds2 = readRDS("./617.2/results/Sample_England_controlB.1.1.7_n_tree_dating_10_dated_trees.rds")
-tds2[[1]][[1]]$tip.label
-test2=unlist(lapply(tds2, function(x) x[[1]]$tip.label))
-
