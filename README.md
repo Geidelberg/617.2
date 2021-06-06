@@ -11,7 +11,7 @@ What is required is a directory with ML trees for both lineages in nwk filetype.
 
 The code is mostly generalisable but not totally so needs to be edited a bit with new analyses.
 
-Basically, the R scripts will be on climb. The bash files point towards those R scripts. You use 'sbatch bash_script.sh' to launch them. So you'll need to launch 2 jobs to date the two linages, then once that's done, you'll need to launch 2 more jobs to run mlesky.
+Basically, the R scripts will be on climb. The bash files point towards those R scripts. You use 'sbatch bash_script.sh' to launch them. So you'll need to launch 2 jobs to date the two sets of trees, then once that's done, you'll need to launch 2 more jobs to run mlesky.
 
 Edit R scripts:
 in compare_lineages_xxx.R:
@@ -32,6 +32,7 @@ To date trees:
 - type in console: 'sbatch date_trees_climb_B.1.1.7_control.sh' this launches the tree dating script for 117
 - to check the progress of the jobs you can type in console 'squeue  -u climb-covid19-geidelbergl -O jobid,name:30,username:30,state,timeused,nodelist' but edit for your username
 
+Once you have the dated trees in rds form in your dir, to run mlesky:
 
 Edit R scripts:
 in mlesky_d1_xxx.R
@@ -46,7 +47,6 @@ Edit bash files:
 
 
 
-Once you have the dated trees in rds form in your dir, to run mlesky:
 - 'sbatch mlesky_climb_B.1.617.2.sh'
 - 'sbatch mlesky_climb_B.1.1.7_control.sh'
 
