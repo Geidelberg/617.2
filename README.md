@@ -11,14 +11,17 @@ What is required is a directory with ML trees for both lineages in nwk filetype.
 
 The code is mostly generalisable but not totally so needs to be edited a bit with new analyses.
 
+Basically, the R scripts will be on climb. The bash files point towards those R scripts. You use 'sbatch <bashscript>' to launch them. So you'll need to launch 2 jobs to date the two linages, then once that's done, you'll need to launch 2 more jobs to run mlesky.
+
 Edit R scripts:
 in compare_lineages_xxx.R:
 - Make sure the civetfn definition is reading the latest md file
 - Make sure mltr_list is pointing to the correct dir with all the ml trees
 
+Upload the R scripts to climb
+
 Edit the bash files:
 - date_trees_xxx.sh bash files need to point to the R script with the correct path on line 12. at the moment it's pointing to an R script in my dir but you'll need to point it to yours. Make sure it's pointing to the R script of the same name though.
-- the mlesky_climb_xxx.sh files also need to have the path changed to the correct dir. Again make sure it's pointing to the R script of the same name.
 
 
 To date trees: 
@@ -36,6 +39,10 @@ in mlesky_d1_xxx.R
 - again make sure it's finding the correct ML trees
 - when run_mlesky is called, make sure it's reading in the correct dated trees, and make sure the output file name (arg 'ofn') is good
 
+Upload R scripts to climb
+
+Edit bash files:
+- the mlesky_climb_xxx.sh files also need to have the path changed to the correct dir. Again make sure it's pointing to the R script of the same name.
 
 
 
